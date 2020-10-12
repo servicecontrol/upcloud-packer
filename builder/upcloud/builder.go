@@ -71,7 +71,7 @@ func (b *Builder) Run(ctx context.Context, ui packer.Ui, hook packer.Hook) (pack
 
 	// Build the steps
 	steps := []multistep.Step{
-		&StepCreateSSHKey{
+		&ObtainSSHKeys{
 			Debug:        b.config.PackerDebug,
 			DebugKeyPath: fmt.Sprintf("packer-builder-upcloud-%s.pem", b.config.PackerBuildName),
 		},
